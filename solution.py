@@ -4,6 +4,8 @@
 # you only add that node to the solution set if there are no violations of the rules
 #
 # at the end, given the valid solutions, take the one with highest involved
+#
+# I chose this approach because honestly everything and their mother can be modeled as a graph problem.
 
 test_cases = [
     [[0,1,2],[1,2]],
