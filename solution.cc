@@ -1,12 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 
 string printVector(vector<int>& v) {
     string s{};
     s += "{ ";
-    for (int i = 0; i < v.size(); i++) {
+    for (size_t i = 0; i < v.size(); i++) {
         s += v[i];
         s += " ";
     }
@@ -16,18 +14,18 @@ string printVector(vector<int>& v) {
 
 void printVectorOfVectors(vector<vector<int>>& v) {
     cout << "{ " << endl;
-    for (int i = 0; i < v.size(); i++) {
+    for (size_t i = 0; i < v.size(); i++) {
         cout << printVector(v[i]) << endl;
     }
     cout << "}";
 }
 
-void solve(vector<vector<int>> meetings) {
-    printVectorOfVectors(meetings);
+void solve(vector<vector<vector<int>>> meetings) {
+    for (auto meetings
 }
 
 int main() {
-    vector<vector<int>> test_cases = {
+    vector<vector<vector<int>>> test_cases = {
         {{0,1,2},{1,2}},
         {{0,1},{0},{1}},
         {{0,1,2},{2,3}}
