@@ -1,3 +1,10 @@
+# idea: this is a graph problem where for each node (meeting)
+#       you either add it to our answer or not
+#
+# you only add that node to the solution set if there are no violations of the rules
+#
+# at the end, given the valid solutions, take the one with highest involved
+
 test_cases = [
     [[0,1,2],[1,2]],
     [[0,1],[0],[1]],
@@ -34,11 +41,11 @@ def helper(solutions, possible_solution, meetings, booked):
         # recurse on the next choice (don't need to recurse if we didn't add because we already did the alternative)
         helper(solutions, possible_solution, meetings[1:], booked)
 
-
+# (repeated)
 # idea: this is a graph problem where for each node (meeting)
 #       you either add it to our answer or not
 #
-# you only add that node to the solution setif there are no violations of the rules
+# you only add that node to the solution set if there are no violations of the rules
 #
 # at the end, given the valid solutions, take the one with highest involved
 def solve(meetings):
