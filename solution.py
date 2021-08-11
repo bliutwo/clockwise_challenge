@@ -8,18 +8,51 @@ test_cases = [
 ]
 
 ans = [
-    [[0,1,2]],
-    [[0,1]],
-    [[0,1,2]],
+    ([[0,1,2]], 3)
+    ([[0,1]], 2)
+    ([[0,1,2]], 3)
 ]
 
-def solve(case):
+def helper(solutions, possible_solution, meetings, involved, booked):
+    if len(meetings) == 0:
+        solutions.append(possible_solution)
+        return
+
+    # don't add the current meeting
+    helper(solutions, possible_solution, meetings[1:], involved+0, booked)
+
+    # possibly add the current meeting
+    meeting_to_add = meetings[0]
+    can_add = True
+    for attendee in meeting_to_add
+
+    if can_add:
+        possible_solution.append(meeting_to_add)
+    helper(solutions, possible_solution, meetings[1:], newInvolved)
+
+
+
+def solve(meetings):
     ans = []
+    involved = 0
     attendees = set()
-    for meeting in case:
+    for meeting in meetings:
         for attendee in meeting:
             attendees.add(attendee)
-    return ans
+
+    # idea: this is a graph problem where for each node (meeting)
+    #       you either add it to our answer or not
+    # you only take that path if there are no violations of the rules
+
+    # at the end, given the valid solutions, take the one with highest involved
+
+    solutions = []
+
+    possible_solution = [meetings[0]]
+    booked = set(meetings[0])
+    helper(solutions, possible_solution[:], meetings[1:], involved + 1, booked)
+
+    return ans, involved
     
 
 for i, meetings in enumerate(test_cases):
